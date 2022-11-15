@@ -1,5 +1,10 @@
 import 'package:exercises_app/src/exercises/exercises.dart';
+import 'package:exercises_app/src/exercises/model/exercises.dart';
+import 'package:exercises_app/src/exercises_detail/exercises_detail.dart';
+import 'package:exercises_app/src/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+
+import '../routes/route_generator.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,9 +12,8 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Exercises(),
-      ),
+      initialRoute: AppRoutes.home,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
