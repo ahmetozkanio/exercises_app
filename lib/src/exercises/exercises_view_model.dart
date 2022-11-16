@@ -1,4 +1,5 @@
 import 'package:exercises_app/src/exercises/service/exercises_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './exercises.dart';
 import 'model/exercises.dart';
@@ -9,11 +10,11 @@ abstract class ExercisesViewModel extends State<Exercises> {
 
   @override
   void initState() {
-    //
     getExercisesService();
     super.initState();
   }
 
+  //The function of sending the list of exercises via API and creating a list
   void getExercisesService() async {
     try {
       final List<ExercisesEntity>? exercisesItems =
@@ -25,10 +26,14 @@ abstract class ExercisesViewModel extends State<Exercises> {
           searchExercisesList = exercisesList;
         });
       }
-      print(exercisesItems);
-    } finally {}
+    } catch (e) {
+      if (kDebugMode) {
+        print("Get Exercises Service Error : $e");
+      }
+    }
   }
 
+  //Where we create the search process
   void search(String value) {
     setState(() {
       if (value.isNotEmpty) {

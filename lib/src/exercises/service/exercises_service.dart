@@ -1,8 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-
-import 'package:exercises_app/src/exercises/exercises.dart';
 
 import '../../service/base_service.dart';
 import '../model/exercises.dart';
@@ -22,7 +21,9 @@ class ExercisesService {
         return exercises;
       }
     } catch (error) {
-      print('Exercises Service Error : $error');
+      if (kDebugMode) {
+        print('Exercises Service Error : $error');
+      }
       return null;
     }
     return null;

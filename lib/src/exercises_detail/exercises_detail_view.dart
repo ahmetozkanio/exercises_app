@@ -1,6 +1,7 @@
 import 'package:exercises_app/src/exercises_detail/widgets/detail_text_widgets.dart';
 import 'package:exercises_app/src/theme/color.dart';
 import 'package:flutter/material.dart';
+import '../widgets/divider.dart';
 import './exercises_detail_view_model.dart';
 
 class ExercisesDetailView extends ExercisesDetailViewModel {
@@ -27,26 +28,26 @@ class ExercisesDetailView extends ExercisesDetailViewModel {
       child: ListView(
         shrinkWrap: true,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 48.0,
           ),
           titlesRow("Name", arguments?.name ?? "name"),
-          const Divider(),
+          customDivider(),
           titlesRow("Type", arguments?.type ?? "type"),
-          Divider(),
+          customDivider(),
           titlesRow("Muscle", arguments?.muscle ?? "muscle"),
-          Divider(),
+          customDivider(),
           titlesRow("Equipment", arguments?.equipment ?? "equipment"),
-          Divider(),
+          customDivider(),
           titlesRow("Difficulty", arguments?.difficulty ?? "difficulty"),
-          Divider(),
+          customDivider(),
           detailTitleText("Instructions"),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Text(
             arguments?.instructions ?? "instructions",
-            style: TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18),
           ),
         ],
       ),

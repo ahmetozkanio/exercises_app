@@ -13,15 +13,15 @@ Widget detailTitleText(String title) {
   return Text(
     "$title: ",
     overflow: TextOverflow.clip,
-    style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+    style: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
   );
 }
 
 Widget detailSubtitleText(String subTitle) {
   return Text(
-    "$subTitle",
+    subTitle,
     overflow: TextOverflow.clip,
-    style: TextStyle(
+    style: const TextStyle(
       fontSize: 22.0,
     ),
   );
